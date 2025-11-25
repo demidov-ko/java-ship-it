@@ -5,14 +5,12 @@ public abstract class Parcel {
     protected int weight; //вес
     protected String deliveryAddress; //адрес места назначения
     protected int sendDay; //день отправки
-    protected int cost; //базовая стоимость 1 посылки
 
-    public Parcel(String description, int weight, String deliveryAddress, int sendDay, int cost) {
+    public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
         this.description = description;
         this.weight = weight;
         this.deliveryAddress = deliveryAddress;
         this.sendDay = sendDay;
-        this.cost = cost;
     }
 
     //метод упаковки для всех посылок
@@ -28,12 +26,8 @@ public abstract class Parcel {
 
     //метод вычисления стоимости посылки
     public int calculateDeliveryCost() {
-        int deliveryCost = weight * cost;
+        int deliveryCost = weight * getBaseCost();
         return deliveryCost;
-    }
-
-    public int getCost() {
-        return cost;
     }
 
     public int getWeight() {
@@ -43,4 +37,6 @@ public abstract class Parcel {
     public String getDescription() {
         return description;
     }
+
+    protected abstract int getBaseCost();
 }

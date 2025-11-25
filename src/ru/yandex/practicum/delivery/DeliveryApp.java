@@ -87,6 +87,7 @@ public class DeliveryApp {
             case 2:
                 parcel = new FragileParcel(description, weight, deliveryAddress, sendDay);
                 trackablesParcels.add((Trackable) parcel);
+                break;
             case 3:
                 System.out.print("Введите срок годности (дни): ");
                 int timeToLive = scanner.nextInt();
@@ -177,4 +178,5 @@ public class DeliveryApp {
         selectedBox.getAllParcels();
     }
 }
-
+/*Привет, Давид! Отработал твои комментарии, + еще пару недочетов поправил. На счет папки lib,
+не заметил как она добавилась, но теперь разобрался, когда удалил ее и перестало работать тестирование))*/

@@ -42,7 +42,7 @@ public class DeliveryCostTest {
         int currentDay = 25;
         PerishableParcel parcel = new PerishableParcel("Пицца", 2, "м.Московская",
                 23, 1);
-        assertFalse(parcel.isExpired(currentDay));
+        assertTrue(parcel.isExpired(currentDay));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class DeliveryCostTest {
         int currentDay = 23;
         PerishableParcel parcel = new PerishableParcel("Пицца", 2, "м.Московская",
                 23, 1);
-        assertTrue(parcel.isExpired(currentDay));
+        assertFalse(parcel.isExpired(currentDay));
     }
 
     @Test
